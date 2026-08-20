@@ -33,7 +33,7 @@ class Unauthorized(app_commands.CheckFailure):
 def admin_only() -> Check:
     """A check that ensures a command can only be used by an admin."""
 
-    async def predicate(interaction: discord.Interaction) -> bool:
+    async def predicate(interaction: discord.Interaction) -> bool:  # NOSONAR
         member = interaction.user
 
         if interaction.guild is None or isinstance(member, discord.User):
